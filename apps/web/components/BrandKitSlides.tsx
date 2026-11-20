@@ -3,6 +3,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { BrandResult, SocialAsset } from "@halo/types";
+import { apiUrl } from "@/lib/utils";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -71,7 +72,7 @@ export function getGeometryStyle(keywords: string[]): GeometryStyle {
 function fixUrl(url?: string): string {
   if (!url) return "";
   if (url.startsWith("http")) return url;
-  return `http://localhost:8000${url.startsWith("/") ? "" : "/"}${url}`;
+  return apiUrl(url);
 }
 
 // ─── Shared Chrome ────────────────────────────────────────────────────────────

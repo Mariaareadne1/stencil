@@ -3,11 +3,12 @@
 
 import { useEffect, useState } from "react";
 import type { BrandResult, SocialAsset } from "@halo/types";
+import { apiUrl } from "@/lib/utils";
 
 function fixUrl(url?: string | null): string {
   if (!url) return "";
   if (url.startsWith("http")) return url;
-  return `http://localhost:8000${url.startsWith("/") ? "" : "/"}${url}`;
+  return apiUrl(url);
 }
 
 async function downloadAsset(url: string, filename: string) {
