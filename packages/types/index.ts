@@ -133,15 +133,29 @@ export interface BrandAssets {
   social_kit?: SocialAsset[];
 }
 
+export interface InfluencerMatch {
+  handle: string;
+  platform: string;
+  niche: string;
+  follower_tier: string;
+  why: string;
+  content_style: string;
+  estimated_reach: string;
+  collab_angle: string;
+}
+
 export interface BrandResult {
   persona: Persona;
   brand_assets: BrandAssets;
   agency_matches: AgencyMatch[];
+  influencer_matches?: InfluencerMatch[];
   brand_guide_pdf_url: string;
   pitch_deck_pdf_url?: string | null;
   web_guide_url?: string | null;
   mfg_spec_sheet_pdf_url?: string | null;
   brand_kit_zip_url?: string | null;
+  canva_edit_urls?: Record<string, string> | null;
+  canva_folder_url?: string | null;
   error_message?: string | null;
 }
 
