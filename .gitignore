@@ -42,3 +42,6 @@ apps/api/cache/
 # PDF output
 *.pdf
 !docs/**/*.pdf
+
+# Local agent / editor settings
+.claude/settings.local.json
